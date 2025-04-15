@@ -1,9 +1,10 @@
-﻿const string Rock = "Rock";
+const string Rock = "Rock";
 const string Paper = "Paper";
 const string Scissors = "Scissors";
 
-Console.Write("Choose [r]ock, [p]aper, [s]cissors: ");
 Console.ForegroundColor = ConsoleColor.Blue;
+Console.Write("Choose [r]ock, [p]aper, [s]cissors: ");
+Console.ForegroundColor = ConsoleColor.Magenta;
 string PlayerChoice = Console.ReadLine();
 
 if (PlayerChoice == "r" || PlayerChoice == "rock")
@@ -23,6 +24,7 @@ else if (PlayerChoice == "s" || PlayerChoice == "scissors")
 
 else
 {
+    Console.ForegroundColor = ConsoleColor.Cyan;
     Console.WriteLine("Invalid Input. Try Again...");
     return;
 }
@@ -46,26 +48,29 @@ switch (computerrandomnumber)
         break;
 }
 
+Console.ForegroundColor = ConsoleColor.White;
 Console.WriteLine($"The computer chose {ComputerChoice}.");
 
-if ((PlayerChoice == Rock &&  ComputerChoice == Scissors) ||
-    (PlayerChoice == Paper && ComputerChoice == Rock) || 
-    (PlayerChoice == Scissors &&  ComputerChoice == Paper))
+if ((PlayerChoice == Rock && ComputerChoice == Scissors) ||
+    (PlayerChoice == Paper && ComputerChoice == Rock) ||
+    (PlayerChoice == Scissors && ComputerChoice == Paper))
 {
-    Console.WriteLine("You win!");
     Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("You win!");
 }
 
-else if ((PlayerChoice == Rock &&  ComputerChoice == Rock) ||
-        (PlayerChoice == Paper && ComputerChoice == Paper) || 
-        (PlayerChoice == Scissors &&  ComputerChoice == Scissors))
+else if ((PlayerChoice == Rock && ComputerChoice == Rock) ||
+        (PlayerChoice == Paper && ComputerChoice == Paper) ||
+        (PlayerChoice == Scissors && ComputerChoice == Scissors))
 {
+    Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine("Draw.");
-        Console.ForegroundColor = ConsoleColor.Yellow;
 }
 
 else
 {
-    Console.WriteLine("You loose!");
     Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("You loose!");
 }
+
+Console.ForegroundColor = ConsoleColor.Black;
