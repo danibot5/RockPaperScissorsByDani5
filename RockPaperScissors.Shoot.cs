@@ -3,6 +3,7 @@ const string Paper = "Paper";
 const string Scissors = "Scissors";
 
 Console.Write("Choose [r]ock, [p]aper, [s]cissors: ");
+Console.ForegroundColor = ConsoleColor.Blue;
 string PlayerChoice = Console.ReadLine();
 
 if (PlayerChoice == "r" || PlayerChoice == "rock")
@@ -52,9 +53,19 @@ if ((PlayerChoice == Rock &&  ComputerChoice == Scissors) ||
     (PlayerChoice == Scissors &&  ComputerChoice == Paper))
 {
     Console.WriteLine("You win!");
+    Console.ForegroundColor = ConsoleColor.Green;
+}
+
+else if ((PlayerChoice == Rock &&  ComputerChoice == Rock) ||
+        (PlayerChoice == Paper && ComputerChoice == Paper) || 
+        (PlayerChoice == Scissors &&  ComputerChoice == Scissors))
+{
+    Console.WriteLine("Draw.")
+        Console.ForegroundColor = ConsoleColor.Orange;
 }
 
 else
 {
     Console.WriteLine("You loose!");
+    Console.ForegroundColor = ConsoleColor.Red;
 }
