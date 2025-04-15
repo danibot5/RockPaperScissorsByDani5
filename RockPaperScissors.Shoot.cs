@@ -60,8 +60,8 @@ else if ((PlayerChoice == Rock &&  ComputerChoice == Rock) ||
         (PlayerChoice == Paper && ComputerChoice == Paper) || 
         (PlayerChoice == Scissors &&  ComputerChoice == Scissors))
 {
-    Console.WriteLine("Draw.")
-        Console.ForegroundColor = ConsoleColor.Orange;
+    Console.WriteLine("Draw.");
+        Console.ForegroundColor = ConsoleColor.Yellow;
 }
 
 else
